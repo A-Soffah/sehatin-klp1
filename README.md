@@ -24,7 +24,7 @@ SEHATIN merupakan layanan berlangganan makanan sehat harian yang menyediakan pil
 
 ## Website
 
-**Link GitHub Pages:** Akan ditambahkan setelah publikasi.
+**Link GitHub Pages:** (https://a-soffah.github.io/sehatin-klp1/)
 
 ## Anggota Kelompok
 
