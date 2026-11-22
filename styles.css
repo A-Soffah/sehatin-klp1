@@ -1,1 +1,1621 @@
+/* =====================================================
+   SEHATIN — PREMIUM HEALTHY MEAL
+   FINAL STYLESHEET
+   UI/UX DESIGN — WEBDEV C KELOMPOK 1
 
+   STYLE: MODERN ORGANIC LUXURY
+
+   Forest Green   : #244A38
+   Champagne Gold : #C8A977
+   Ivory Cream    : #F6F3EC
+   Sage Green     : #A9BBA5
+
+   Fonts:
+   Playfair Display — Headings
+   DM Sans — Body, Navigation, Buttons
+===================================================== */
+
+
+/* =====================================================
+   01. GOOGLE FONTS
+===================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+
+/* =====================================================
+   02. DESIGN SYSTEM
+===================================================== */
+
+:root {
+    --forest: #244A38;
+    --forest-dark: #183728;
+
+    --gold: #C8A977;
+    --gold-dark: #9B7C4C;
+
+    --ivory: #F6F3EC;
+
+    --sage: #A9BBA5;
+    --sage-light: #EDF2EA;
+
+    --charcoal: #262B27;
+    --muted: #667168;
+
+    --border: #E5E0D6;
+    --white: #FFFFFF;
+
+    --font-heading: 'Playfair Display', Georgia, serif;
+    --font-body: 'DM Sans', Arial, sans-serif;
+
+    --radius-card: 16px;
+    --radius-button: 8px;
+
+    --shadow-soft:
+        0 10px 35px rgba(24, 55, 40, 0.07);
+
+    --shadow-hover:
+        0 20px 45px rgba(24, 55, 40, 0.13);
+
+    --container-width: 1180px;
+}
+
+
+/* =====================================================
+   03. GLOBAL RESET
+===================================================== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    background: var(--ivory);
+    color: var(--charcoal);
+
+    font-family: var(--font-body);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.7;
+
+    -webkit-font-smoothing: antialiased;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    margin: 0;
+
+    color: var(--forest);
+    font-family: var(--font-heading);
+
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+}
+
+p {
+    margin: 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+section {
+    scroll-margin-top: 90px;
+}
+
+:focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 3px;
+}
+
+
+/* =====================================================
+   04. MAIN CONTAINER
+===================================================== */
+
+.navbar,
+.hero-container,
+.page-width,
+#footer-section .container {
+    width: min(
+        var(--container-width),
+        calc(100% - 48px)
+    );
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-padding {
+    padding: 95px 0;
+}
+
+
+/* =====================================================
+   05. HEADER — CEO
+===================================================== */
+
+#header-section {
+    position: relative;
+    z-index: 100;
+
+    width: 100%;
+
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+}
+
+#header-section .navbar {
+    min-height: 90px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 30px;
+}
+
+
+/* =====================================================
+   06. LOGO SEHATIN — UI/UX DESIGNER
+===================================================== */
+
+#header-section .logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    flex-shrink: 0;
+
+    text-decoration: none;
+}
+
+#header-section .logo-image {
+    display: block;
+
+    width: 230px;
+    max-width: 100%;
+
+    height: auto;
+    max-height: 70px;
+
+    object-fit: contain;
+    object-position: left center;
+
+    transition: transform 0.3s ease;
+}
+
+#header-section .logo:hover .logo-image {
+    transform: scale(1.035);
+}
+
+
+/* =====================================================
+   07. NAVIGATION MENU
+===================================================== */
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 36px;
+}
+
+.nav-menu a {
+    position: relative;
+
+    color: var(--forest);
+
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: color 0.25s ease;
+}
+
+.nav-menu a::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--gold);
+
+    transition: width 0.25s ease;
+}
+
+.nav-menu a:hover {
+    color: var(--gold-dark);
+}
+
+.nav-menu a:hover::after {
+    width: 100%;
+}
+
+
+/* =====================================================
+   08. HERO SECTION — PRODUCT MANAGER 1
+===================================================== */
+
+.hero-section {
+    padding: 100px 0;
+
+    background: var(--ivory);
+}
+
+.hero-container {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.08fr)
+        minmax(0, 1fr);
+
+    align-items: center;
+
+    gap: 65px;
+}
+
+.hero-content {
+    min-width: 0;
+}
+
+
+/* HERO BADGE */
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 9px 16px;
+
+    background: var(--sage-light);
+    border: 1px solid #D7E3D3;
+    border-radius: 100px;
+
+    color: var(--forest);
+
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+}
+
+
+/* HERO TITLE */
+
+.hero-title {
+    max-width: 620px;
+
+    margin: 24px 0;
+
+    color: var(--forest);
+
+    font-family: var(--font-heading);
+    font-size: clamp(36px, 4.5vw, 56px);
+    font-weight: 700;
+
+    line-height: 1.14;
+    letter-spacing: -0.035em;
+}
+
+
+/* HERO DESCRIPTION */
+
+.hero-subtitle {
+    max-width: 560px;
+
+    color: var(--muted);
+
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+
+/* HERO BENEFITS */
+
+.hero-benefits {
+    display: grid;
+
+    gap: 15px;
+
+    margin-top: 30px;
+
+    list-style: none;
+}
+
+.hero-benefit-item {
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+
+    color: var(--forest);
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.hero-benefit-icon {
+    flex: 0 0 40px;
+
+    width: 40px;
+    height: 40px;
+
+    display: grid;
+    place-items: center;
+
+    background: var(--sage-light);
+    border-radius: 10px;
+
+    font-size: 19px;
+}
+
+.hero-benefit-text {
+    line-height: 1.5;
+}
+
+
+/* =====================================================
+   09. HERO BUTTONS
+===================================================== */
+
+.hero-cta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 14px;
+
+    margin-top: 36px;
+}
+
+.hero-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 50px;
+
+    padding: 13px 23px;
+
+    border-radius: var(--radius-button);
+
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 700;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+/* PRIMARY BUTTON */
+
+.hero-btn-primary {
+    background: var(--forest);
+    border: 1px solid var(--forest);
+
+    color: var(--white);
+}
+
+.hero-btn-primary:hover {
+    background: var(--forest-dark);
+
+    box-shadow: var(--shadow-soft);
+
+    transform: translateY(-2px);
+}
+
+
+/* SECONDARY BUTTON */
+
+.hero-btn-secondary {
+    background: transparent;
+
+    border: 1px solid var(--forest);
+
+    color: var(--forest);
+}
+
+.hero-btn-secondary:hover {
+    background: var(--sage-light);
+
+    transform: translateY(-2px);
+}
+
+
+/* =====================================================
+   10. HERO IMAGE
+===================================================== */
+
+.hero-image {
+    position: relative;
+
+    min-width: 0;
+}
+
+.hero-image::before {
+    content: "";
+
+    position: absolute;
+    z-index: 0;
+
+    top: -17px;
+    right: -17px;
+
+    width: 65%;
+    height: 65%;
+
+    border: 2px solid var(--gold);
+    border-radius: 22px;
+}
+
+.hero-image img {
+    position: relative;
+    z-index: 1;
+
+    width: 100%;
+    height: 485px;
+
+    object-fit: cover;
+
+    border-radius: 20px;
+
+    box-shadow: var(--shadow-soft);
+}
+
+
+/* =====================================================
+   11. CATALOG SECTION — PRODUCT MANAGER 2
+===================================================== */
+
+.catalog-section {
+    padding: 95px 0;
+
+    background: var(--white);
+}
+
+
+/* SECTION HEADING */
+
+.section-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 40px;
+
+    margin-bottom: 44px;
+}
+
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 10px;
+
+    color: var(--gold-dark);
+
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+}
+
+.eyebrow-dot {
+    flex: 0 0 8px;
+
+    width: 8px;
+    height: 8px;
+
+    background: var(--gold);
+
+    border-radius: 50%;
+}
+
+.section-heading h2 {
+    margin-top: 17px;
+
+    font-size: clamp(28px, 3.2vw, 38px);
+    line-height: 1.2;
+}
+
+.section-heading h2 span {
+    color: var(--gold-dark);
+}
+
+.section-heading > p {
+    max-width: 380px;
+
+    color: var(--muted);
+
+    font-size: 15px;
+    line-height: 1.85;
+}
+
+
+/* =====================================================
+   12. PACKAGE GRID
+===================================================== */
+
+.package-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    align-items: stretch;
+
+    gap: 25px;
+}
+
+
+/* PACKAGE CARD */
+
+.package-card {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+
+    overflow: hidden;
+
+    background: var(--white);
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius-card);
+
+    box-shadow: var(--shadow-soft);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.package-card:hover {
+    transform: translateY(-7px);
+
+    border-color: var(--sage);
+
+    box-shadow: var(--shadow-hover);
+}
+
+
+/* FEATURED PACKAGE */
+
+.package-featured {
+    border: 2px solid var(--gold);
+}
+
+.package-featured:hover {
+    border-color: var(--gold-dark);
+}
+
+
+/* =====================================================
+   13. PACKAGE IMAGES
+===================================================== */
+
+.package-image {
+    position: relative;
+
+    overflow: hidden;
+
+    background: var(--sage-light);
+}
+
+.package-image img {
+    width: 100%;
+    height: 225px;
+
+    object-fit: cover;
+
+    transition: transform 0.4s ease;
+}
+
+.package-card:hover .package-image img {
+    transform: scale(1.045);
+}
+
+.image-label {
+    position: absolute;
+
+    bottom: 15px;
+    left: 15px;
+
+    padding: 7px 12px;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    border-radius: 6px;
+
+    color: var(--forest);
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 0.07em;
+}
+
+
+/* =====================================================
+   14. PACKAGE CONTENT
+===================================================== */
+
+.package-content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+
+    padding: 25px;
+}
+
+.package-category {
+    color: var(--gold-dark);
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 0.1em;
+}
+
+.package-content h3 {
+    margin: 9px 0 15px;
+
+    color: var(--forest);
+
+    font-size: 24px;
+    line-height: 1.25;
+}
+
+.package-content h3 span {
+    color: var(--gold-dark);
+}
+
+.package-description {
+    color: var(--muted);
+
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.package-detail {
+    margin-top: 18px;
+
+    color: var(--muted);
+
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.package-detail strong {
+    color: var(--forest);
+}
+
+
+/* MENU EXAMPLE */
+
+.menu-example {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 19px;
+    padding: 14px;
+
+    background: var(--sage-light);
+
+    border-radius: 10px;
+}
+
+.menu-icon {
+    flex: 0 0 auto;
+
+    font-size: 22px;
+}
+
+.menu-example strong,
+.menu-example small {
+    display: block;
+}
+
+.menu-example strong {
+    color: var(--forest);
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.menu-example small {
+    color: var(--muted);
+
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   15. PACKAGE PRICE AND BUTTON
+===================================================== */
+
+.package-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    gap: 15px;
+
+    margin-top: auto;
+    padding-top: 26px;
+}
+
+.package-price strong {
+    color: var(--forest);
+
+    font-family: var(--font-body);
+    font-size: 23px;
+    font-weight: 800;
+}
+
+.package-price span {
+    color: var(--muted);
+
+    font-size: 12px;
+}
+
+
+/* SELECT PACKAGE BUTTON */
+
+.btn-select {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    min-height: 42px;
+
+    padding: 10px 15px;
+
+    background: var(--forest);
+
+    border: 1px solid var(--forest);
+    border-radius: var(--radius-button);
+
+    color: var(--white);
+
+    font-size: 12px;
+    font-weight: 700;
+
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease;
+}
+
+.btn-select:hover {
+    background: var(--forest-dark);
+
+    transform: translateY(-2px);
+}
+
+
+/* CATALOG NOTE */
+
+.catalog-note {
+    margin-top: 30px;
+
+    color: var(--muted);
+
+    font-size: 13px;
+    text-align: center;
+}
+
+
+/* =====================================================
+   16. PROMO SECTION
+===================================================== */
+
+.promo-section {
+    padding: 65px 0;
+
+    background: var(--forest);
+
+    color: var(--white);
+}
+
+.promo-inner {
+    display: grid;
+
+    grid-template-columns:
+        auto 1fr auto;
+
+    align-items: center;
+
+    gap: 35px;
+}
+
+.promo-mark {
+    color: var(--gold);
+
+    font-family: var(--font-heading);
+    font-size: 85px;
+
+    line-height: 1;
+}
+
+.promo-kicker {
+    color: var(--gold);
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 0.13em;
+}
+
+.promo-copy h2 {
+    margin: 12px 0 15px;
+
+    color: var(--white);
+
+    font-size: clamp(27px, 3vw, 37px);
+}
+
+.promo-copy > p:last-child {
+    max-width: 490px;
+
+    color: #E0E9E1;
+
+    font-size: 14px;
+}
+
+
+/* PROMO CODE */
+
+.promo-code-wrap {
+    min-width: 255px;
+
+    padding: 22px;
+
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 12px;
+
+    background: rgba(255,255,255,0.06);
+}
+
+.promo-code-wrap > span {
+    color: var(--gold);
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 0.1em;
+}
+
+.promo-code {
+    margin: 9px 0;
+
+    color: var(--white);
+
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.promo-code span {
+    color: var(--gold);
+}
+
+.promo-code-wrap small {
+    display: block;
+
+    color: #E0E9E1;
+
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   17. CALCULATOR SECTION — SOFTWARE ENGINEER
+===================================================== */
+
+#calc-section {
+    padding: 95px 0;
+
+    background: var(--sage-light);
+}
+
+.calc-layout {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
+
+    align-items: center;
+
+    gap: 65px;
+}
+
+
+/* CALCULATOR INTRO */
+
+.calc-intro {
+    min-width: 0;
+}
+
+.calc-intro h2 {
+    margin: 17px 0 22px;
+
+    font-size: clamp(28px, 3.2vw, 38px);
+}
+
+.calc-intro h2 span {
+    color: var(--gold-dark);
+}
+
+.calc-intro > p {
+    max-width: 470px;
+
+    color: var(--muted);
+
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+.calc-note {
+    margin-top: 25px;
+
+    padding: 15px 18px;
+
+    background: rgba(255,255,255,0.65);
+
+    border-left: 3px solid var(--gold);
+    border-radius: 8px;
+
+    color: var(--forest);
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   18. CALCULATOR CARD
+===================================================== */
+
+.calculator-card {
+    min-width: 0;
+
+    padding: 35px;
+
+    background: var(--white);
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius-card);
+
+    box-shadow: var(--shadow-soft);
+}
+
+.calculator-card h3 {
+    color: var(--forest);
+
+    font-size: 26px;
+}
+
+.calculator-subtitle {
+    margin-top: 8px;
+
+    color: var(--muted);
+
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   19. CALCULATOR FORM
+===================================================== */
+
+#subscription-form {
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+
+    margin-top: 25px;
+}
+
+#subscription-form label {
+    margin-top: 8px;
+
+    color: var(--forest);
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.label-hint {
+    color: var(--muted);
+
+    font-weight: 400;
+}
+
+#subscription-form input,
+#subscription-form select {
+    width: 100%;
+    min-width: 0;
+    min-height: 47px;
+
+    padding: 12px 14px;
+
+    background: var(--white);
+
+    border: 1px solid var(--border);
+    border-radius: 8px;
+
+    color: var(--charcoal);
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+#subscription-form input:focus,
+#subscription-form select:focus {
+    border-color: var(--forest);
+
+    box-shadow:
+        0 0 0 3px rgba(36,74,56,0.12);
+}
+
+#subscription-form input::placeholder {
+    color: #98A19A;
+}
+
+
+/* =====================================================
+   20. PROMO INPUT
+===================================================== */
+
+.promo-input-row {
+    display: flex;
+    align-items: stretch;
+
+    gap: 10px;
+}
+
+.promo-input-row input {
+    flex: 1;
+}
+
+.btn-apply {
+    flex: 0 0 auto;
+
+    padding: 11px 17px;
+
+    background: var(--sage-light);
+
+    border: 1px solid var(--sage);
+    border-radius: 8px;
+
+    color: var(--forest);
+
+    font-size: 13px;
+    font-weight: 700;
+
+    transition: background 0.2s ease;
+}
+
+.btn-apply:hover {
+    background: var(--sage);
+}
+
+.promo-message {
+    min-height: 20px;
+
+    color: var(--forest);
+
+    font-size: 12px;
+}
+
+
+/* =====================================================
+   21. PRICE BREAKDOWN
+===================================================== */
+
+.price-breakdown {
+    margin-top: 16px;
+
+    padding: 20px;
+
+    background: var(--ivory);
+
+    border: 1px solid var(--border);
+    border-radius: 10px;
+}
+
+.price-breakdown > div {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin: 9px 0;
+
+    color: var(--muted);
+
+    font-size: 13px;
+}
+
+.price-breakdown strong {
+    color: var(--forest);
+
+    text-align: right;
+}
+
+.price-breakdown .discount-row strong {
+    color: var(--gold-dark);
+}
+
+.price-breakdown .total-row {
+    margin-top: 15px;
+    padding-top: 15px;
+
+    border-top: 1px solid var(--border);
+
+    color: var(--forest);
+
+    font-weight: 700;
+}
+
+.total-row strong {
+    font-size: 19px;
+    font-weight: 800;
+}
+
+
+/* =====================================================
+   22. CALCULATOR SUBMIT BUTTON
+===================================================== */
+
+.calc-submit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    min-height: 49px;
+
+    margin-top: 13px;
+    padding: 13px 20px;
+
+    background: var(--forest);
+
+    border: 1px solid var(--forest);
+    border-radius: var(--radius-button);
+
+    color: var(--white);
+
+    font-size: 14px;
+    font-weight: 700;
+
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease;
+}
+
+.calc-submit:hover {
+    background: var(--forest-dark);
+
+    transform: translateY(-2px);
+}
+
+
+/* CALCULATOR DISCLAIMER */
+
+.calculator-disclaimer {
+    margin-top: 18px;
+
+    color: var(--muted);
+
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   23. FOOTER — CEO
+===================================================== */
+
+#footer-section {
+    padding: 60px 0 30px;
+
+    background: var(--forest);
+
+    color: var(--white);
+}
+
+#footer-section .container {
+    text-align: center;
+}
+
+#footer-section h3 {
+    margin-bottom: 12px;
+
+    color: var(--white);
+
+    font-family: var(--font-body);
+    font-size: 30px;
+    font-weight: 800;
+
+    letter-spacing: 0.06em;
+}
+
+#footer-section h4 {
+    margin: 30px 0 15px;
+
+    color: var(--gold);
+
+    font-family: var(--font-body);
+    font-size: 15px;
+    font-weight: 700;
+}
+
+#footer-section p {
+    margin: 7px 0;
+
+    color: #E0E9E1;
+
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+#footer-section p:last-child {
+    margin-top: 32px;
+    padding-top: 20px;
+
+    border-top:
+        1px solid rgba(255,255,255,0.2);
+
+    color: var(--gold);
+
+    font-size: 12px;
+}
+
+
+/* =====================================================
+   24. RESPONSIVE — TABLET / IPAD
+===================================================== */
+
+@media (max-width: 1024px) {
+
+    #header-section .logo-image {
+        width: 200px;
+        max-height: 58px;
+    }
+
+    .hero-container {
+        gap: 38px;
+    }
+
+    .hero-image img {
+        height: 420px;
+    }
+
+    .package-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .calc-layout {
+        gap: 35px;
+    }
+
+    .promo-inner {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .promo-mark {
+        display: none;
+    }
+
+}
+
+
+/* =====================================================
+   25. RESPONSIVE — MOBILE / SMALL TABLET
+===================================================== */
+
+@media (max-width: 767px) {
+
+    .navbar,
+    .hero-container,
+    .page-width,
+    #footer-section .container {
+        width: calc(100% - 32px);
+    }
+
+    #header-section .navbar {
+        min-height: 75px;
+
+        flex-wrap: wrap;
+        justify-content: center;
+
+        padding: 15px 0;
+    }
+
+    .nav-menu {
+        width: 100%;
+
+        justify-content: center;
+        flex-wrap: wrap;
+
+        gap: 12px 24px;
+    }
+
+    .nav-menu a {
+        font-size: 12px;
+    }
+
+    .hero-section {
+        padding: 60px 0 70px;
+    }
+
+    .hero-container {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+
+    .hero-title {
+        font-size: 38px;
+    }
+
+    .hero-image img {
+        height: 350px;
+    }
+
+    .hero-image::before {
+        top: -8px;
+        right: -8px;
+    }
+
+    .catalog-section,
+    #calc-section {
+        padding: 70px 0;
+    }
+
+    .section-heading {
+        display: block;
+    }
+
+    .section-heading > p {
+        margin-top: 20px;
+    }
+
+    .package-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .promo-section {
+        padding: 55px 0;
+    }
+
+    .promo-inner {
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+    }
+
+    .promo-code-wrap {
+        min-width: 0;
+    }
+
+    .calc-layout {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+
+    .calculator-card {
+        padding: 28px;
+    }
+
+}
+
+
+/* =====================================================
+   26. RESPONSIVE — SMARTPHONE
+===================================================== */
+
+@media (max-width: 599px) {
+
+    #header-section .logo-image {
+        width: 180px;
+        max-height: 52px;
+    }
+
+    .hero-title {
+        font-size: 34px;
+    }
+
+    .hero-subtitle {
+        font-size: 14px;
+    }
+
+    .hero-benefit-item {
+        font-size: 13px;
+    }
+
+    .hero-cta {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .hero-btn {
+        width: 100%;
+    }
+
+    .hero-image img {
+        height: 280px;
+    }
+
+    .package-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .package-image img {
+        height: 235px;
+    }
+
+    .package-content {
+        padding: 22px;
+    }
+
+    .section-heading h2,
+    .calc-intro h2,
+    .promo-copy h2 {
+        font-size: 28px;
+    }
+
+    .calculator-card {
+        padding: 22px;
+    }
+
+    .promo-input-row {
+        flex-wrap: wrap;
+    }
+
+    .promo-input-row input,
+    .btn-apply {
+        width: 100%;
+    }
+
+    .package-footer {
+        gap: 12px;
+    }
+
+    .price-breakdown {
+        padding: 15px;
+    }
+
+    #footer-section {
+        padding: 50px 0 25px;
+    }
+
+}
+
+
+/* =====================================================
+   27. RESPONSIVE — EXTRA SMALL DEVICES
+===================================================== */
+
+@media (max-width: 380px) {
+
+    .nav-menu {
+        gap: 10px 15px;
+    }
+
+    .nav-menu a {
+        font-size: 11px;
+    }
+
+    .hero-title {
+        font-size: 31px;
+    }
+
+    .hero-image img {
+        height: 250px;
+    }
+
+    .package-price strong {
+        font-size: 21px;
+    }
+
+    .promo-code {
+        font-size: 19px;
+    }
+
+    .calculator-card {
+        padding: 18px;
+    }
+
+    .price-breakdown > div {
+        font-size: 12px;
+    }
+
+}
+
+
+/* =====================================================
+   28. ACCESSIBILITY
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation: none !important;
+        transition: none !important;
+    }
+
+}
+
+/* =====================================================
+   END OF SEHATIN STYLESHEET
+===================================================== */
